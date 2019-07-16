@@ -67,6 +67,7 @@ module.exports = function(client, connection) {
                     if (!registeredTopics[signature].handlers.length && registeredTopics[signature].listener) {
                         registeredTopics[signature].listener.unsubscribe();
                         registeredTopics[signature].listener = null;
+                        delete registeredTopics[signature];
                     }
                 }
             }
